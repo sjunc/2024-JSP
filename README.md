@@ -103,3 +103,42 @@ JSTL과 EL을 따로 분리한 것은 의도된 것이 아닌 순서의 문제�
 리다이렉트 이 페이지에서 저 페이지
 http://localhost:8880/chap12/use_out_tag.jsp?path=/
 
+### 8주차
+#### JSTL 표현식, fmt 
+#### get과 post
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 접두어 c
+
+### 6강
+#### DBMS
+1~6강 돌아보기
+http:// 프로토콜
+https:// 보안 접속
+도메인을 DNS에 저장해서 요청후 받음.
+client 	-	web was(apach-tomcta) 		- DB
+정상적으로 받았을 때와 아닐 때 차이
+get인지 post 인지 상태 코드 값은 뭔지
+
+표준 액션 태그(action tag) - %
+커스텀 태그(custom tag) .tld
+
+메서드까진 아니여도 객체를 알아두자
+그리고 코드 값의 의미들
+
+<%@ include %>와 <jsp: include>의 차이점
+파라미터
+쿠키와 세션의 차이
+
+쿠키와 헤더 
+세션에서도 마찬가지로 
+객체 생성하고 set attribute 로 값을 넣어줌. 
+
+EL
+제공하는 기능
+jstl
+라이브러리의 접두어, url 방식.
+
+DBMS 
+데이터베이스 관리 시스템-MySQL
+*데이터베이스 프로그래밍 순서
+1. 연결 -2.명령어 전송(SQL 실행) - 3. 결과값 전송 - 4. 연결 종료
