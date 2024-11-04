@@ -29,3 +29,11 @@ getter
 
 액션 태그로 연결
 <jsp:useBean... id = " ... ", class = " ... ">
+러 응용프로그램에서 재사용 가능
+
+기초: html에서 get, set으로 jsp 가지고 오는 방법
+<jsp:setProperty name="..." property="*" />
+<jsp:getProperty name="..."  property="..." />
+
+현재: + java
+
