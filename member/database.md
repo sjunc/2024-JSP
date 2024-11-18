@@ -3,20 +3,59 @@ DB는 일반적으로 서버에 들어가 있음.
 
 3계층으로 이루어짐.
 
-.jsp            * 미들웨어 *            basicdatabase
-화면            JDBC                    member 테이블
-클라이언트       .jar 파일 받은 거      권한으로 컨트롤
-                                        기본 (root) 권한
-                                        ID와 사용자를 새로 만들어 사용
+.jsp            * 미들웨어 *                        basicdatabase
+화면             JDBC                               member 테이블
+클라이언트       .jar 파일 받은 거                  권한으로 컨트롤
+                DB가 추가되면 다른                 기본 (root) 권한
+                미들웨어를 같이 사용            ID와 사용자를 새로 만들어 사용
+
 
 try{정상실행}
 catch{예외 처리}
 
+JDBC (JAVA DATABASE CONNECTION)
 
+사용 순서 
 
+1단계 연결
+Class.forName("com.mysql.jdbc.Driver");
+ .jar mysql 드라이버 사용
 
+2단계 커넥션 객체 생성
+conn = DriverManager.getConnection(jdbcUrl,dbId ,dbPass);
 
+3단계 쿼리문 작성
+pstmt=conn.prepareStatement(sql);
+ 	 pstmt.setString(1,id);
+   pstmt.setString(2,passwd);
+ 	 pstmt.setString(3,name);
+ 	 pstmt.setTimestamp(4,register);
+4단계 실행
+ 	 pstmt.executeUpdate();
 
+select를 해서 나온 덩어리
+rs(record set)
+레코드(튜플) 모임
+
+ while(rs.next()){
+	   String id= rs.getString("id");
+       String passwd= rs.getString("pass");
+       String name= rs.getString("name");
+       Timestamp register=rs.getTimestamp("reg_date");
+
+%>
+       <tr>
+  	     <td width="100"><%=id%></td>
+  	     <td width="100"><%=passwd%></td>
+  	     <td width="100"><%=name%></td>
+  	     <td width="250"><%=register.toString()%></td>
+       </tr>
+<%  }  
+
+rs 다음이 없을 때 까지 실행
+문자열 변수에 저장하고 밑에서 출력 
+
+5단계(ResultSet 처리)
 
 
 
